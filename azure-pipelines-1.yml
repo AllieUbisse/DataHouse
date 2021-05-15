@@ -1,4 +1,17 @@
 # Starter pipeline
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
+      wget -O test.csv "http://sinca.mma.gob.cl/cgi-bin/APUB-MMA/apub.tsindico2.cgi?outtype=xcl&macro=./RII/237/Cal/PM25//PM25.diario.diario.ic&from=13060100&to=15110323&path=/usr/airviro/data/CONAMA/&lang=esp&rsrc=&macropath="
+      
+      ls
+      
+      mkdir pipeline_data
+      cp test.csv pipeline_data/
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
